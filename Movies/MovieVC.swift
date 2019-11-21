@@ -12,13 +12,11 @@ class MovieVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-
-    var currentFontSize = CGFloat(20) {
+    var currentFontSize1 = CGFloat(20) {
         didSet{
             tableView.reloadData()
         }
     }
-    
     
     var movies = [Movie](){
         didSet{
@@ -30,6 +28,13 @@ class MovieVC: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         loadData()
+    }
+    
+    @IBAction func unwindEvent(segue: UIStoryboardSegue){
+        guard let movieDetailVC = segue.source as? MovieDetailVC else{
+            fatalError("failed to get MovieDVC")
+        }
+        currentFontSize1 = movieDetailVC.currentFontSize!
     }
     
     func loadData() {
@@ -47,8 +52,9 @@ extension MovieVC: UITableViewDataSource{
 
         let movie = movies[indexPath.row]
         cell.textLabel?.text = movie.name
-        cell.textLabel?.font = UIFont(name: "Times New Roman", size: currentFontSize)
+        cell.textLabel?.font = UIFont(name: "Times New Roman", size: currentFontSize1)
         cell.detailTextLabel?.text = movie.year.description
+        cell.detailTextLabel?.font = UIFont(name: "Times New Roman", size: currentFontSize1)
         
         return cell
     }
