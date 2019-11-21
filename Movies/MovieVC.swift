@@ -12,6 +12,10 @@ class MovieVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    @IBOutlet weak var movieImageView: UIImageView!
+    
+    
     var currentFontSize1 = CGFloat(20) {
         didSet{
             tableView.reloadData()
@@ -30,11 +34,32 @@ class MovieVC: UIViewController {
         loadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let movieDetailVC = segue.destination as? MovieDetailVC else{
+            fatalError("could not segue properly")
+        }
+        movieDetailVC.currentFontSize = currentFontSize1
+        
+}
+//        var secondFont = movieDetailVC.currentFontSize
+//
+//        var slideOut = movieDetailVC.sliderOutlet.value{
+//            didSet{
+//
+//            }
+//        }
+//        var stepOut = movieDetailVC.stepperOutlet.value
+//        slideOut = Float(currentFontSize1)
+//        stepOut = Double(currentFontSize1)
+//        secondFont = currentFontSize1
+
+    
     @IBAction func unwindEvent(segue: UIStoryboardSegue){
         guard let movieDetailVC = segue.source as? MovieDetailVC else{
             fatalError("failed to get MovieDVC")
         }
-        currentFontSize1 = movieDetailVC.currentFontSize!
+        
+        currentFontSize1 = movieDetailVC.currentFontSize ?? 17
     }
     
     func loadData() {

@@ -45,40 +45,49 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3B6-cv-rIe">
+                                <rect key="frame" x="308" y="115" width="106" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="9dD-g3-5Qc" secondAttribute="bottom" id="4O7-UW-Wip"/>
+                            <constraint firstItem="9dD-g3-5Qc" firstAttribute="top" secondItem="0HR-L7-fnJ" secondAttribute="top" id="I5g-To-UKP"/>
                             <constraint firstItem="9dD-g3-5Qc" firstAttribute="leading" secondItem="0HR-L7-fnJ" secondAttribute="leading" id="O3f-xh-9Cm"/>
+                            <constraint firstItem="9dD-g3-5Qc" firstAttribute="trailing" secondItem="0HR-L7-fnJ" secondAttribute="trailing" id="XmC-5T-I9U"/>
                             <constraint firstItem="9dD-g3-5Qc" firstAttribute="top" secondItem="0HR-L7-fnJ" secondAttribute="top" id="hWY-OR-uKK"/>
                             <constraint firstAttribute="trailing" secondItem="9dD-g3-5Qc" secondAttribute="trailing" id="mDh-vS-S7c"/>
+                            <constraint firstItem="9dD-g3-5Qc" firstAttribute="leading" secondItem="0HR-L7-fnJ" secondAttribute="leading" id="mew-pe-hIi"/>
+                            <constraint firstAttribute="bottom" secondItem="9dD-g3-5Qc" secondAttribute="bottom" id="xeU-H8-WH5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0HR-L7-fnJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="qG7-Oh-Hc2">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="sca-nm-C4P">
                             <connections>
-                                <segue destination="0vw-nK-Bq9" kind="show" id="FkV-pP-9JK"/>
+                                <segue destination="0vw-nK-Bq9" kind="showDetail" id="yvC-Of-sFf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="movieImageView" destination="3B6-cv-rIe" id="hxx-Mo-2Xc"/>
                         <outlet property="tableView" destination="9dD-g3-5Qc" id="ytR-Cy-nVw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dX-3s-HvJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775" y="-34"/>
+            <point key="canvasLocation" x="1773.913043478261" y="-34.151785714285715"/>
         </scene>
         <!--Movie DetailVC-->
         <scene sceneID="oHE-Kj-u5r">
             <objects>
                 <viewController id="0vw-nK-Bq9" customClass="MovieDetailVC" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fus-yX-Hj5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="80" translatesAutoresizingMaskIntoConstraints="NO" id="tA1-cQ-jxG">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="17" minValue="1" maxValue="80" translatesAutoresizingMaskIntoConstraints="NO" id="tA1-cQ-jxG">
                                 <rect key="frame" x="85" y="322" width="245" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -122,7 +131,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sgU-xV-AAC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="EjK-zl-jUQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1774" y="-883"/>
+            <point key="canvasLocation" x="2591" y="-55"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IS0-ED-Car">
