@@ -13,21 +13,25 @@ class MovieDetailVC: UIViewController {
     @IBOutlet weak var stepperOutlet:UIStepper!
     @IBOutlet weak var sliderOutlet:UISlider!
     
+    @IBOutlet weak var currentSizeLabel: UILabel!
+    
     var currentFontSize: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+    // configure
     @IBAction func fontStepper(_ sender: UIStepper) {
         sliderOutlet.value = Float(sender.value)
         currentFontSize = CGFloat(sender.value)
-        print("stepper = \(currentFontSize))")
+        print("stepper = \(currentFontSize!)")
+        currentSizeLabel.text = "Font Size: \(Int(currentFontSize!))"
     }
-    
+    //configure
     @IBAction func fontSlider(_ sender: UISlider) {
         stepperOutlet.value = Double(sender.value)
         currentFontSize = CGFloat(sender.value)
-        print("slider = \(currentFontSize))")
+        print("slider = \(Int(currentFontSize!))")
+        currentSizeLabel.text = "Font Size: \(Int(currentFontSize!))"
     }
 }

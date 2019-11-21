@@ -114,6 +114,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="u3z-ef-fY5"/>
                     <connections>
+                        <outlet property="currentSizeLabel" destination="JYU-gh-edD" id="Rs3-Wn-Yyk"/>
                         <outlet property="sliderOutlet" destination="tA1-cQ-jxG" id="feP-TB-b7N"/>
                         <outlet property="stepperOutlet" destination="cHO-Vn-qlx" id="nzc-0t-TCl"/>
                     </connections>
